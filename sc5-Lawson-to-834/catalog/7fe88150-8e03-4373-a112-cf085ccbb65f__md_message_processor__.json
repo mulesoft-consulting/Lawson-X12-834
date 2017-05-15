@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "flatfile1"
+        }
+    },
+    "outputMessageMetadata": {},
+    "id": "7fe88150-8e03-4373-a112-cf085ccbb65f",
+    "version": "5.2.0.0"
+}

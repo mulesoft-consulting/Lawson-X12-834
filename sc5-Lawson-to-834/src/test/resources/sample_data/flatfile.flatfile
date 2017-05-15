@@ -1,0 +1,167 @@
+STA08340001005010X220A1
+BGN00099999999                      20170424164815                                4
+DTP0007D820160501
+N1A0P5DART                          FI1122334455                    
+N1B0INBlue Cross Blue Shield        XV123456789                     
+INS0Y18030XNAE    N  000000000000
+REF00F457339711      
+REF11L                              
+DTP1336D819820726
+NM10IL1HAMILTON                      PATRICK        W                            34457339711      
+N3A03002 RAYONNE DR.                                            
+N4A0ROWLETT           TX75088     US
+DMG0D819591225MI
+HLH0N
+NM11311
+N3A13002 RAYONNE DR.                                            
+N4A1ROWLETT           TX75088     US
+HDA0030HLTNo Medical Coverage              
+DTP2348D820160101
+INS0Y18030XNAE    N  000000000000
+REF00F455727119      
+REF11L                              
+DTP1336D820151214
+NM10IL1HALL                          CHARLIE                                     34455727119      
+N3A0822 WOODPLEEN LN.                                           
+N4A0DESOTO            TX75115       
+DMG0D819450118MM
+HLH0N
+NM11311
+N3A1822 WOODPLEEN LN.                                           
+N4A1DESOTO            TX75115       
+HDA0030HLTNo Medical Coverage              
+DTP2348D820160313
+INS0N19030XNAE   NN  000000000004
+REF00F456777461      
+REF11L                              
+NM10IL1ladet                         christopher    m                            34884544188      
+N3A02023 river brk                                              
+N4A0heartland         TX            
+DMG0D820130809M 
+HLH0N
+NM11311
+N3A12023 river brk                                              
+N4A1heartland         TX            
+HDA0030HLTBlueCrossBlueShield-EPO          
+DTP2348D820160101
+INS0Y18030XNAE    N  000000000000
+REF00F461672247      
+REF11L                              
+DTP1336D820031013
+NM10IL1TORBER                        TOMMY          R                            34461672247      
+N3A01112 grape valley                                           
+N4A0duncanville       TX75137     US
+DMG0D819690416MI
+HLH0N
+NM11311
+N3A11112 grape valley                                           
+N4A1duncanville       TX75137     US
+HDA0030HLTBlueCrossBlueShield-EPO          
+DTP2348D820160101
+INS0N01030XNAE   NN  000000000001
+REF00F461672247      
+REF11L                              
+NM10IL1TORBER                        TERESA         D                            34450081109      
+N3A01112 grape valley                                           
+N4A0duncanville       TX75137     US
+DMG0D819650202F 
+HLH0N
+NM11311
+N3A11112 grape valley                                           
+N4A1duncanville       TX75137     US
+HDA0030HLTBlueCrossBlueShield-EPO          
+DTP2348D820160101
+INS0N19030XNAE   NN  000000000004
+REF00F461672247      
+REF11L                              
+NM10IL1TORBER                        BRITTNEY       L                            34629421440      
+N3A01112 grape valley                                           
+N4A0duncanville       TX75137     US
+DMG0D819940414F 
+HLH0N
+NM11311
+N3A11112 grape valley                                           
+N4A1duncanville       TX75137     US
+HDA0030HLTBlueCrossBlueShield-EPO          
+DTP2348D820160101
+INS0N19030XNAE   NN  000000000006
+REF00F461672247      
+REF11L                              
+NM10IL1TORBER                        ASHTON         C                            34634049857      
+N3A01112 grape valley                                           
+N4A0duncanville       TX75137     US
+DMG0D820060909M 
+HLH0N
+NM11311
+N3A11112 grape valley                                           
+N4A1duncanville       TX75137     US
+HDA0030HLTBlueCrossBlueShield-EPO          
+DTP2348D820160101
+INS0Y18030XNAE    N  000000000000
+REF00F228236333      
+REF11L                              
+DTP1336D819961216
+NM10IL1VANGHAN                       CHARVIS        J                            34228236333      
+N3A0107 Feestaent View Dr                                       
+N4A0Ennis             TX75119     US
+DMG0D819720322MM
+HLH0N
+NM11311
+N3A1107 Feestaent View Dr                                       
+N4A1Ennis             TX75119     US
+HDA0030HLTBlueCrossBlueShield CC-Low       
+DTP2348D820160101
+INS0N19030XNAE   NN  000000000003
+REF00F228236333      
+REF11L                              
+NM10IL1VANGHAN                       KOBE           J                            34634763380      
+N3A03502 Easton Meadows Apt 111                                 
+N4A0Garland           TX75043     US
+DMG0D820010516M 
+HLH0N
+NM11311
+N3A13502 Easton Meadows Apt 111                                 
+N4A1Garland           TX75043     US
+HDA0030HLTBlueCrossBlueShield CC-Low       
+DTP2348D820160101
+INS0N19030XNAE   NN  000000000004
+REF00F228236333      
+REF11L                              
+NM10IL1VANGHAN                       AURELIA                                     34629191185      
+N3A0107 Feestaent View Dr                                       
+N4A0Ennis             TX75119     US
+DMG0D820090101F 
+HLH0N
+NM11311
+N3A1107 Feestaent View Dr                                       
+N4A1Ennis             TX75119     US
+HDA0030HLTBlueCrossBlueShield CC-Low       
+DTP2348D820160101
+INS0N19030XNAE   NN  000000000005
+REF00F228236333      
+REF11L                              
+NM10IL1VANGHAN                       LAILA          S                            34630882161      
+N3A03502 Easton Meadows Apt 111                                 
+N4A0Garland           TX75043     US
+DMG0D820030808F 
+HLH0N
+NM11311
+N3A13502 Easton Meadows Apt 111                                 
+N4A1Garland           TX75043     US
+HDA0030HLTBlueCrossBlueShield CC-Low       
+DTP2348D820160101
+INS0Y18030XNAE    N  000000000000
+REF00F464312297      
+REF11L                              
+DTP1336D820100503
+NM10IL1JOHNSON                       TINA                                        34464312297      
+N3A0526 FAYE ST                                                 
+N4A0DESOTO            TX75115     US
+DMG0D819620805FI
+HLH0N
+NM11311
+N3A1526 FAYE ST                                                 
+N4A1DESOTO            TX75115     US
+HDA0030HLTBlueCrossBlueShield CC-Low       
+DTP2348D820160101
+SEA000000959000001

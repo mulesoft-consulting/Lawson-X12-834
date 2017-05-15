@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "flatfile1"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "checkflat"
+        }
+    },
+    "id": "4e0a56cb-74ad-42b6-8807-cf25fbc75582",
+    "version": "5.2.0.0"
+}

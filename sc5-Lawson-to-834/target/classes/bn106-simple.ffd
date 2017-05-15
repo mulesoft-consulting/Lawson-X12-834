@@ -1,0 +1,206 @@
+  form: FLATFILE
+  structures:
+  - id: 'flat1'
+    name: My Flat 1
+    tagStart: 0
+    tagLength: 4
+    data:
+    - { idRef: 'STA0' }
+    - { idRef: 'BGN0' }
+    - { idRef: 'DTP0' }
+    - { idRef: 'N1A0' }
+    - { idRef: 'N1B0' }
+    - { idRef: 'N1C0', usage: 'O' }
+    - groupId: 'Data'
+      count: '>1'
+      items:
+      - { idRef: 'INS0' }
+      - { idRef: 'REF0' }
+      - { idRef: 'REF1' }
+      - { idRef: 'REF2', usage: 'O' }
+      - { idRef: 'DTP1', usage: 'O' }
+      - { idRef: 'NM10' }
+      - { idRef: 'N3A0' }
+      - { idRef: 'N4A0' }
+      - { idRef: 'DMG0' }
+      - { idRef: 'HLH0' }
+      - { idRef: 'NM11' }
+      - { idRef: 'N3A1' }
+      - { idRef: 'N4A1' }
+      - { idRef: 'HDA0' }
+      - { idRef: 'DTP2' }
+    - { idRef: 'SEA0' }
+  segments:
+  - id: 'STA0'
+    name: Transaction Set Header
+    tag: 'STA0'
+    values:
+    - { name: 'ID', type: Integer, length: 3 }
+    - { name: 'CN', type: Integer, length: 4 }
+    - { name: 'CR', type: String, length: 12 }
+  - id: 'BGN0'
+    name: Beginning Segment
+    tag: 'BGN0'
+    values:
+    - { name: 'Purpose Code', type: Integer, length: 2 }
+    - { name: 'Identifier Code', type: String, length: 30 }
+    - { name: 'Creation Date', type: Integer, length: 8 }
+    - { name: 'Creation Time', type: Integer, length: 6 }
+    - { name: 'Time Zone Code', type: String, length: 2 }
+    - { name: 'Identifier Code 2', type: String, length: 30 }
+    - { name: 'Action Code', type: Integer, length: 1 }
+  - id: 'DTP0'
+    name: DTP
+    tag: 'DTP0'
+    values:
+    - { name: 'Date Qualifier', type: Integer, length: 3 }
+    - { name: 'Format Qualifier', type: String, length: 2 }
+    - { name: 'Date Time', type: Integer, length: 8 }
+  - id: 'N1A0'
+    name: Sponsor Name
+    tag: 'N1A0'
+    values:
+    - { name: 'Plan Sponsor', type: String, length: 2 }
+    - { name: 'Plan Sponsor Name', type: String, length: 30 }
+    - { name: 'Identification Code Qualifier', type: String, length: 2 }
+    - { name: 'Identification Code', type: String, length: 30 }
+  - id: 'N1B0'
+    name: Payer
+    tag: 'N1B0'
+    values:
+    - { name: 'Identifier Code', type: String, length: 2 }
+    - { name: 'Insurer Name', type: String, length: 30 }
+    - { name: 'Identification Code Qualifier', type: String, length: 2 }
+    - { name: 'Identification Code', type: String, length: 30 }
+  - id: 'N1C0'
+    name: Broker
+    tag: 'N1C0'
+    values:
+    - { name: 'Broker Code', type: String, length: 2 }
+    - { name: 'Broker Name', type: String, length: 30 }
+    - { name: 'Identification Code Qualifier', type: String, length: 2 }
+    - { name: 'Identification Code', type: String, length: 30 }
+  - id: 'INS0'
+    name: Insurance
+    tag: 'INS0'
+    values:
+    - { name: 'Insured Indicator', type: String, length: 1 }
+    - { name: 'Relationship Code', type: Integer, length: 2 }
+    - { name: 'Maintenance Type Code', type: Integer, length: 3, usage: 'O' }
+    - { name: 'Maintenance Reason Code', type: String, length: 2, usage: 'O' }
+    - { name: 'Benefits Status Code', type: String, length: 1, usage: 'O' }
+    - { name: 'Medicare Plan Code', type: String, length: 1, usage: 'O' }
+    - { name: 'COBRA Code', type: Integer, length: 1, usage: 'O' }
+    - { name: 'Employment Status  Code', type: String, length: 2, usage: 'O' }
+    - { name: 'Student Status Code', type: String, length: 1, usage: 'O' }
+    - { name: 'Handicap Indicator', type: String, length: 1, usage: 'O' }
+    - { name: 'Date Format Qualifier', type: String, length: 2, usage: 'O' }
+    - { name: 'Insured Death Date', type: Integer, length: 8, usage: 'O' }
+    - { name: 'Birth Sequence Number', type: Integer, length: 4, usage: 'O' }
+  - id: 'REF0'
+    name: Subscriber Number
+    tag: 'REF0'
+    values:
+    - { name: 'Ref Application Qualifier', type: String, length: 2 }
+    - { name: 'Subscriber Identifier', type: String, length: 15 }
+  - id: 'REF1'
+    name: Member Policy Number
+    tag: 'REF1'
+    values:
+    - { name: 'Ref Application Qualifier', type: String, length: 2 }
+    - { name: 'Subscriber Identifier', type: String, length: 30 }
+  - id: 'REF2'
+    name: Prior Coverage Months
+    tag: 'REF2'
+    values:
+    - { name: 'Ref Application Qualifier', type: String, length: 2 }
+    - { name: 'Subscriber Identifier', type: String, length: 30 }
+  - id: 'DTP1'
+    name: DTP Member Level Dates
+    tag: 'DTP1'
+    values:
+    - { name: 'Date Qualifier', type: Integer, length: 3 }
+    - { name: 'Format Identifier', type: String, length: 2 }
+    - { name: 'Status Date', type: Integer, length: 8 }
+  - id: 'NM10'
+    name: Member Name
+    tag: 'NM10'
+    values:
+    - { name: 'Entity Identifier', type: String, length: 2 }
+    - { name: 'Type Qualifier', type: Integer, length: 1 }
+    - { name: 'Subscriber Last Name', type: String, length: 30, usage: 'O' }
+    - { name: 'Subscriber First Name', type: String, length: 15, usage: 'O' }
+    - { name: 'Subscriber Middle Name', type: String, length: 10, usage: 'O' }
+    - { name: 'Subscriber Prefix', type: String, length: 15, usage: 'O' }
+    - { name: 'Subscriber Suffix', type: String, length: 4, usage: 'O' }
+    - { name: 'Identification Code Qualifier', type: String, length: 2, usage: 'O' }
+    - { name: 'Subscriber Identifier', type: String, length: 15, usage: 'O' }
+  - id: 'N3A0'
+    name: Member Residence Address
+    tag: 'N3A0'
+    values:
+    - { name: 'Address1', type: String, length: 30 }
+    - { name: 'Address2', type: String, length: 30, usage: 'O' }
+  - id: 'N4A0'
+    name: Member Residence City
+    tag: 'N4A0'
+    values:
+    - { name: 'City', type: String, length: 18 }
+    - { name: 'State', type: String, length: 2 }
+    - { name: 'Zip', type: String, length: 10 }
+    - { name: 'Country Code', type: String, length: 2 }
+  - id: 'DMG0'
+    name: Member Demographics
+    tag: 'DMG0'
+    values:
+    - { name: 'Date Qualifier', type: String, length: 2 }
+    - { name: 'Birth Date', type: Integer, length: 8 }
+    - { name: 'Gender', type: String, length: 1 }
+    - { name: 'MArrital Status', type: String, length: 1 }
+  - id: 'HLH0'
+    name: Member Health Info
+    tag: 'HLH0'
+    values:
+    - { name: 'Health Related Code', type: String, length: 1 }
+  - id: 'NM11'
+    name: Member Mailing Address
+    tag: 'NM11'
+    values:
+    - { name: 'Identifier Code', type: Integer, length: 2 }
+    - { name: 'Type Qualifier', type: Integer, length: 1 }
+  - id: 'N3A1'
+    name: Member Residence Address
+    tag: 'N3A1'
+    values:
+    - { name: 'Address1', type: String, length: 30 }
+    - { name: 'Address2', type: String, length: 30, usage: 'O' }
+  - id: 'N4A1'
+    name: Member Residence City
+    tag: 'N4A1'
+    values:
+    - { name: 'City', type: String, length: 18 }
+    - { name: 'State', type: String, length: 2 }
+    - { name: 'Zip', type: String, length: 10 }
+    - { name: 'Country Code', type: String, length: 2 }
+  - id: 'HDA0'
+    name: Health Coverage
+    tag: 'HDA0'
+    values:
+    - { name: 'Maintenance Type', type: Integer, length: 3 }
+    - { name: 'Insurance Line', type: String, length: 3 }
+    - { name: 'Coverage Description', type: String, length: 30 }
+    - { name: 'Level Code', type: String, length: 3 }
+  - id: 'DTP2'
+    name: Health Coverage Dates
+    tag: 'DTP2'
+    values:
+    - { name: 'Time Qualifier', type: Integer, length: 3 }
+    - { name: 'Date Qualifier', type: String, length: 2 }
+    - { name: 'Coverage Period', type: Integer, length: 8 }
+  - id: 'SEA0'
+    name: Health Coverage
+    tag: 'SEA0'
+    values:
+    - { name: 'Segment Count', type: Integer, length: 10 }
+    - { name: 'Control Number', type: Integer, length: 4 }
+    

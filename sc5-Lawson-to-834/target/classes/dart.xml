@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:x12-edi="http://www.mulesoft.org/schema/mule/x12-edi" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/x12-edi http://www.mulesoft.org/schema/mule/x12-edi/current/mule-x12-edi.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <file:connector name="File" writeToDirectory="src/test/resources/output" readFromDirectory="src/test/resources/input" autoDelete="true" streaming="true" validateConnections="true" doc:name="File"/>
+    <x12-edi:config name="X12_EDI" interchangeIdQualifierSelf="ZZ" interchangeIdSelf="HSB834" groupIdSelf="HSB834" interchangeIdQualifierPartner="ZZ" interchangeIdPartner="TBD" groupIdPartner="TBD" doc:name="X12 EDI" lineEnding="LFCR">
+        <x12-edi:schemas>
+            <x12-edi:schema>/x12/005010/834.esl</x12-edi:schema>
+        </x12-edi:schemas>
+    </x12-edi:config>
+    <configuration doc:name="Configuration">
+         <expression-language>
+             <global-functions>
+                 def addPad(input, size) {
+                     return String.format('%' + size + 's', input)
+                 }
+             </global-functions>
+         </expression-language>
+    </configuration>
+
+    <flow name="dartFlow">
+        <file:inbound-endpoint path="${input.dir}"  responseTimeout="10000" doc:name="File" />
+
+        <custom-transformer class="com.dart.mule.transformers.Bn106Transformer" doc:name="Clean Bn106"/>
+		
+		<dw:transform-message doc:name="Transform Message" metadata:id="e0f0180f-cb94-440d-8357-7ec1c4c43137">
+            <dw:input-payload mimeType="text/plain" doc:sample="sample_data/flatfile.flatfile">
+                <dw:reader-property name="schemaPath" value="bn106-simple.ffd"/>
+                <dw:reader-property name="structureIdent" value="flat1"/>
+            </dw:input-payload>
+            
+            <dw:set-payload resource="classpath:bn106To534.dwl"/>
+        </dw:transform-message>
+        <x12-edi:write config-ref="X12_EDI" doc:name="Write 834"/>
+
+        <logger message="Done with EDI - saving to file..." level="INFO" doc:name="Logger"/>
+        <file:outbound-endpoint path="src/test/resources/output" outputPattern="834.edi" responseTimeout="10000" doc:name="Save to File"/>
+    </flow>
+</mule>
